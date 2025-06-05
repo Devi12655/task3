@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://img.freepik.com/free-psd/3d-rendering-questions-background_23-2151455632.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .countdown {
+      font-size: 120px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+      transition: opacity 1s ease;
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="countdown" id="countdown">4</div>
+
+  <script>
+    let countdownEl = document.getElementById("countdown");
+    let count = 4;
+
+    let timer = setInterval(function() {
+      count--;
+      countdownEl.innerText = count;
+
+      if (count === 1) {
+        clearInterval(timer);
+        setTimeout(function() {
+          countdownEl.classList.add("fade-out");
+          setTimeout(function() {
+            window.location.href = "http://127.0.0.1:3000/quizquist.html";
+          }, 1000); // wait for fade-out to complete
+        }, 1000); // delay to show "1"
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>

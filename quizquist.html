@@ -1,0 +1,237 @@
+<html>
+<head>
+    <style>
+        .symbol{
+    font-size: 30;
+    color: rgb(130, 22, 88);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+div button {
+  background-color: #ffd700;
+  color: #1e1e2f;
+  border: none;
+  padding: 10px 24px;
+  margin: 10px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 190px;
+  transition: background 0.3s, transform 0.2s;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+div button:hover {
+  background-color: #ffc400;
+  transform: scale(1.05);
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color:red
+}
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: chartreuse;
+}
+.res_button{
+background-color: #fffbfb;
+  color: #1e1e2f;
+  padding: 10px 10px;
+  margin: 5px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+transition: background 0.3s, transform 0.2s;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+    </style>
+</head>
+<body>
+    <center><span class="symbol">🧠 Brain Spark</span></center><br>
+   <h2>1. What is the capital city of Japan?</h2>
+<div >
+    <button id="1a" onclick="A1()">A) Tokyo</button>
+    <button id="1b" onclick="B1()">B) Beijing</button><br>
+    <button id="1c" onclick="C1()">C) Seoul</button>
+    <button id="1d" onclick="D1()">D) Bangkok</button>
+</div>
+
+<h2>2. How many continents are there in the world?</h2>
+
+<div>
+    <button id="2a" onclick="A2()">A) 9</button>
+    <button id="2b" onclick="B2()">B) 5</button><br>
+    <button id="2c" onclick="C2()">C) 7</button>
+    <button id="2d" onclick="D2()">D) 8</button>
+</div>
+
+<h2>3. Which planet is known as the Red Planet?</h2>
+
+<div>
+    <button id="3a" onclick="A3()">A) Venus</button>
+    <button id="3b" onclick="B3()">B) Mars</button><br>
+    <button id="3c" onclick="C3()">C) Jupiter</button>
+    <button id="3d" onclick="D3()">D) Saturn</button>
+</div>
+
+<h2>4. Who wrote <em>Romeo and Juliet</em>?</h2>
+
+<div>
+    <button id="4a" onclick="A4()">A) James</button>
+    <button id="4b" onclick="B4()">B) Dickens</button><br>
+    <button id="4c" onclick="C4()">C) Rowling</button>
+    <button id="4d" onclick="D4()"">D) Shakespeare</button>
+</div>
+<center><p id="res" style="font-size: 30;color:rgb(245, 102, 8)">Good Luck</p></center>
+<center><h1 id="best">👍✨</h1>
+<center><button class="res_button"id="o" onclick="set()">OutCome</button></center>
+<script>
+ let op1=document.getElementById("1a");
+ let op2=document.getElementById("1b");
+ let op3=document.getElementById("1c");
+ let op4=document.getElementById("1d");
+ let a1=document.getElementById("2a");
+ let a2=document.getElementById("2b");
+ let a3=document.getElementById("2c");
+ let a4=document.getElementById("2d");
+ let b1=document.getElementById("3a");
+ let b2=document.getElementById("3b");
+ let b3=document.getElementById("3c");
+ let b4=document.getElementById("3d");
+ let c1=document.getElementById("4a");
+ let c2=document.getElementById("4b");
+ let c3=document.getElementById("4c");
+ let c4=document.getElementById("4d");
+ let res=document.getElementById("res");
+ let best=document.getElementById("best"); 
+  let bes=document.getElementById("o"); 
+
+function ch1(a,b,c,d){
+ a.classList.add("button1");
+ b.classList.add("disabled");
+ c.classList.add("disabled"); 
+ d.classList.add("disabled");
+}
+function out(){
+ let sum=0;   
+for(let m of arr){
+sum=sum+m;
+}
+res.textContent=sum;
+}
+let arr=[0,0,0,0];
+function A1(){
+    ch1(op1,op2,op3,op4);
+    arr[0]=5
+    out();
+}
+function B1(){
+    ch1(op1,op2,op3,op4);
+    arr[0] =-2;
+    out();
+}
+function C1(){
+    ch1(op1,op2,op3,op4);
+   arr[0] = -2;
+   out();
+}
+function D1(){
+    ch1(op1,op2,op3,op4);
+    arr[0] = -2;
+    out();
+}
+function A2(){
+    ch1(a3,a1,a2,a4);
+    arr[1] = -2;
+    out();
+}
+function B2(){
+    ch1(a3,a1,a2,a4);
+    arr[1] = -2;
+    out();
+}
+function C2(){
+    ch1(a3,a1,a2,a4);
+    arr[1] = 5;
+    out();
+}
+function D2(){
+    ch1(a3,a1,a2,a4);
+    arr[1] = -2;
+    out();
+}
+function A3(){
+    ch1(b2,b1,b3,b4);
+    arr[2] = -2;
+    out();
+}
+function B3(){
+    ch1(b2,b1,b3,b4);
+    marks=5; 
+    arr[2] = 5;
+    out(); 
+}
+function C3(){
+    ch1(b2,b1,b3,b4);
+    arr[2] = -2;
+    out();
+}
+function D3(){
+    ch1(b2,b1,b3,b4);
+    arr[2] = -2;
+    out();
+}
+function A4(){
+    ch1(c4,c1,c2,c3);
+    arr[3] = -2;
+    out();
+}
+function B4(){
+    ch1(c4,c1,c2,c3);
+    arr[3] = -2;
+    out();
+}
+function C4(){
+    ch1(c4,c1,c2,c3);
+    arr[3] = -2;
+    out();
+}
+ function D4(){
+    ch1(c4,c1,c2,c3);
+    arr[3] = 5;
+   out();
+}
+function set(){ 
+    let total = 0;
+  for (let m of arr) {
+    total += m;
+  }
+if(total==0){
+    bes.style.backgroundColor="white"
+}    
+else if(total>=15){
+best.textContent="You Win 🎉";
+best.style.color="green";
+    bes.style.backgroundColor="green"
+
+}
+else{
+    best.textContent="You Loss 😢";
+    best.style.color="red" ;  
+    bes.style.backgroundColor="red"
+}
+
+
+}
+</script>
+</body>
+<html>

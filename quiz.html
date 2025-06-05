@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quizzical Minds</title>
+ <!-- <link rel="stylesheet" href="quiz.css">-->
+  <style>
+    body {
+  margin: 0;
+  background: #1e1e2f;
+  overflow: hidden;
+  height: 100vh;
+  font-family: sans-serif;
+  color: white;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  z-index: 0;
+}
+
+.symbol {
+  position: absolute;
+  top: -10%;
+  font-size: 2.5rem;
+  animation: fall 6s linear infinite;
+  animation-delay: calc(var(--i) * 1s);
+  color: #ffd700;
+  user-select: none;
+}
+
+.symbol:nth-child(1) { left: 5%;  --i: 0;  }
+.symbol:nth-child(2) { left: 20%; --i: 1;  }
+.symbol:nth-child(3) { left: 35%; --i: 2;  }
+.symbol:nth-child(4) { left: 50%; --i: 3;  }
+.symbol:nth-child(5) { left: 65%; --i: 4;  }
+.symbol:nth-child(6) { left: 80%; --i: 5;  }
+.symbol:nth-child(7) { left: 90%; --i: 6;  }
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+    transform: translateX(20px) rotate(360deg);
+  }
+}
+
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1; /* Appears above falling symbols */
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  background-color: #ffd700;
+  color: #1e1e2f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background-color: #ffc400;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="symbol">❓</span>
+    <span class="symbol">🧠</span>
+    <span class="symbol">📝</span>
+    <span class="symbol">✅</span>
+    <span class="symbol">❌</span>
+    <span class="symbol">💡</span>
+    <span class="symbol">🔠</span>
+  </div>
+
+  <div class="center-content">
+    <h1>Quizzical Minds</h1>
+    <button class="button" onclick="play()">Play</button>
+  </div>
+  <script>
+    function play(){
+    window.location.href="http://127.0.0.1:3000/time.html";
+}
+  </script>
+</body>
+</html>
